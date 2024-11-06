@@ -4,9 +4,36 @@ import { FaLocationDot , FaWhatsapp} from "react-icons/fa6"
 import { MdEmail } from "react-icons/md"
 import imag from "../image/4dacd4c0-540d-403d-b953-187a08a624de.jpeg"
 import { useTranslation } from "react-i18next"
+import { useState } from "react"
+import emailjs from "@emailjs/browser"
 // eslint-disable-next-line react/prop-types
 function Footer({darkMode}){
     const {t}= useTranslation()
+    // Email js
+    const [formData , setFormData] = useState({
+        name: '' , 
+        phone : "", 
+        email:""
+    })
+    const handleChange = (e)=>{
+        setFormData({...formData, [e.target.name] : e.target.value})
+    }
+
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        const templateParams = {
+            from_name: formData.name,
+            phone: formData.phone,
+            from_email : formData.email
+        }
+        emailjs.send('service_sqs1mpz','template_3lplotd',templateParams,'7Hut365rVi7i5Ibnj')
+        .then((response)=>{
+            console.log("Email sent" , response.status, response.text);
+            alert('تم ارسال بنجاح')
+        })
+        setFormData({name:'' , phone:"" , email:""})
+        .catch((err)=> console.error('Failed to send' , err));
+    }
     return(
         <div className={darkMode ? "dark-mode" : "light-mode"}>
             <div className="footer bg-dark mt-5">
@@ -21,9 +48,9 @@ function Footer({darkMode}){
                                     <li><a href="https://wa.me/971561030458"><FaWhatsapp/></a></li>
                                     <li><a href="https://www.instagram.com/new.goldenfuture?igsh=MWdzdGVzbGl1bHZvcw=="><FaInstagram /></a></li>
                                     <li><a href="https://www.linkedin.com/company/smart-homes-real-estate-fzc-llc"><FaLinkedin /></a></li>
-                                    <li><a href="+971561030458"><FaPhoneAlt /></a></li>
-                                    <li><a href="https://smarthomesre.com/Sharjah-United%20Arab%20Emirates"><FaLocationDot /></a></li>
-                                    <li><a href="https://smarthomesre.com/info@smarthomesre.com"><MdEmail /></a></li>
+                                    <li><a href="#"><FaPhoneAlt /></a></li>
+                                    <li><a href="#"><FaLocationDot /></a></li>
+                                    <li><a href="#"><MdEmail /></a></li>
                                 </ul>
                             </div>
                             <div className="Links-footer text-light"  style={{fontFamily:"Merienda" , fontWeight:"bold"}}>
@@ -60,11 +87,13 @@ function Footer({darkMode}){
                             </div>
 
                             <div className="from-input mt-5 ">
-                                <h3 className="text-warning mb-3">{t('footer.get-in-touch')}</h3>
-                                <input type="text" placeholder={t('footer.placeholder1')} />
-                                <input type="text " placeholder={t('footer.placeholder2')} />
-                                <input type="email" placeholder={t('footer.placeholder3')}/>
-                                <button className="bt-input btn btn-warning">{t('footer.placeholder_btn')}</button>
+                                <form onSubmit={handleSubmit}>
+                                    <h3 className="text-warning mb-3">{t('footer.get-in-touch')}</h3>
+                                    <input type="text" name="name" placeholder={t('footer.placeholder1')} value={formData.name} onChange={handleChange}/>
+                                    <input type="text " name="phone" placeholder={t('footer.placeholder2')} value={formData.phone} onChange={handleChange}/>
+                                    <input type="email" name="email" placeholder={t('footer.placeholder3')} value={formData.email} onChange={handleChange}/>
+                                    <button type="submit" className="bt-input btn btn-warning">{t('footer.placeholder_btn')}</button>
+                                </form>
                             </div>
 
                         </div>

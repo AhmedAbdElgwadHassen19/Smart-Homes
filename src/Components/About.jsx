@@ -1,4 +1,5 @@
-import imag from "../image/4dacd4c0-540d-403d-b953-187a08a624de.jpeg"
+import imag1 from "../image/IMG-20241105-WA0023.jpg"
+import imag2 from "../image/4dacd4c0-540d-403d-b953-187a08a624de.jpeg"
 
 import { useState , useEffect  } from "react"
 import Footer from "./footer"
@@ -54,7 +55,7 @@ function About ({darkMode}){
 
                             <div className="col-lg-6 mb-5">
                                 <div className="image-About position-relative">
-                                    <img className="img-fluid" src={imag} alt="" />
+                                    <img className="img-fluid" src={imag2} alt="" />
                                 </div>
                             </div>
                         </div>
@@ -62,7 +63,7 @@ function About ({darkMode}){
                         <div data-aos = "fade-left" className="row">
                         <div className="col-lg-6 mb-5">
                                 <div className="image-About2 position-relative">
-                                    <img className="img-fluid" src={imag} alt="" />
+                                    <img className="img-fluid" src={imag1} alt="" />
                                 </div>
                             </div>
 

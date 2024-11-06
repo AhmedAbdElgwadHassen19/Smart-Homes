@@ -24,9 +24,6 @@ function Navbar({darkMode , toogleDarkMode , toggleLanguage}){
                         <li className="nav-item">
                         <Link to={'/about'} className= {`nav-link p-lg-3 ${darkMode ? "text-light" : "text-dark"}`} >{t('about')}</Link>
                         </li>
-                        <li className="nav-item">
-                        <Link to={'blogs'} className= {`nav-link p-lg-3 ${darkMode ? "text-light" : "text-dark"}`} >{t('blogs')}</Link>
-                        </li>
                         <li className="nav-item dropdown">
                         <Link to={'/browsecity'} className="nav-link dropdown-toggle p-lg-3"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {t('properties')}

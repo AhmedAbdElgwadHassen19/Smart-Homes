@@ -1,5 +1,5 @@
 // import imag from "../image/4dacd4c0-540d-403d-b953-187a08a624de.jpeg"
-import { FaHome ,FaQuestion , FaBed , FaBath , FaRulerCombined} from "react-icons/fa"
+import { FaHome ,FaQuestion , FaBed , FaBath , FaRulerCombined , FaWhatsapp} from "react-icons/fa"
 import { CiLocationOn } from "react-icons/ci"
 import { CgArrowTopLeftR , CgCheckO } from "react-icons/cg"
 import { AiFillFileText } from "react-icons/ai"
@@ -11,24 +11,69 @@ import { useLocation, useParams } from "react-router-dom"
 import Footer from "./footer"
 import { useTranslation } from "react-i18next"
 import AllProducts from "./AllProducts"
-
+import emailjs from "@emailjs/browser"
 // eslint-disable-next-line react/prop-types
-const DetailsBuilding =({darkMode}) =>{
-    
+const DetailsBuilding =({darkMode , language}) =>{
     const {productId} = useParams()
-    
     const [product , setProduct] = useState(null)
     const [loading , setLoading] = useState(true)
     const {t} = useTranslation ()
     const [showSpecialSection , setShowSpecialSection] = useState(false)
     const location =  useLocation ()
+    const [showWhatsAppIcon, setShowWhatsAppIcon] = useState(false)
+
+    // Email js
+    const [formData , setFormData] = useState({
+        name: '' , 
+        phone : "", 
+        email:"",
+        product_Name: ''
+    })
+    const handleChange = (e)=>{
+        setFormData({...formData, [e.target.name] : e.target.value})
+    }
+
+    const handleSubmit = (e)=>{
+        e.preventDefault()
+        console.log('product Name' , formData.product_Name);
+        
+        const templateParams = {
+            from_name: formData.name,
+            phone: formData.phone,
+            from_email : formData.email,
+            product_Name: formData.product_Name
+        }
+        emailjs.send('service_sqs1mpz','template_3lplotd',templateParams,'7Hut365rVi7i5Ibnj')
+        .then((response)=>{
+            console.log("Email sent" , response.status, response.text);
+            alert('تم ارسال بنجاح')
+        })
+        setFormData({name:'' , phone:"" , email:"" })
+        .catch((err)=> console.error('Failed to send' , err));
+    }
 
     useEffect(()=>{
         const FetchProduct = AllProducts.find((item)=> item.id.toString() === productId )
             setProduct(FetchProduct)
             setLoading(false)
+            setShowWhatsAppIcon(true)
+            // Name product in emailjs
+            if(FetchProduct){
+                setFormData((prevFormData) =>({
+                    ...prevFormData,
+                    product_Name : FetchProduct.name.en
+                }))
+            }
     },[productId])
-    
+
+    const WhatsAppIcon = ()=>{
+        if(product){
+            const message = `Hello! Iam interested in the product : ${JSON.stringify(language == 'ar' ? product.name.ar : product.name.en)}`
+            console.log(message);
+            const URLWhats = `https://wa.me/971561030458?text=${encodeURIComponent(message)}`
+            window.open( URLWhats, '_blank')
+        }
+    }
 
     useEffect(()=>{
         if(location.pathname === '/'){
@@ -49,16 +94,16 @@ const DetailsBuilding =({darkMode}) =>{
                 <div className="row ">
                     <div className={`Details-Building-img col-md-8 mt-3  ${darkMode ? 'dark-mode' : ""}`}>
                     <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-                        <div className="Details carousel-inner">
-                            <div className="carousel-item active">
-                            <img src={product.image} className="d-block w-100" alt="..."/>
-                            </div>
-                            <div className="carousel-item">
-                            <img src={product.image}className="d-block w-100" alt="..."/>
-                            </div>
-                            <div className="carousel-item">
-                            <img src={product.image} className="d-block w-100" alt="..."/>
-                            </div>
+                        <div className="Details carousel-inner" >
+                                <div className="carousel-item active">
+                                <img src={product.image} className="d-block w-100" alt={`product Image`}  />
+                                </div>
+                                <div className="carousel-item">
+                                <img src={product.image}className="d-block w-100" alt={`product Image`}   />
+                                </div>
+                                <div className="carousel-item">
+                                <img src={product.image} className="d-block w-100" alt={`product Image`}   />
+                                </div>
                         </div>
                         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -68,12 +113,12 @@ const DetailsBuilding =({darkMode}) =>{
                             <span className="carousel-control-next-icon" aria-hidden="true"></span>
                             <span className="visually-hidden">Next</span>
                         </button>
-                        </div>
+                    </div>
 
                         <div className="info-details mt-5 mb-5">
                             <div className="tile-price-details d-flex justify-content-between p-3">
-                                <h3 className="text-wring pb-2"><FaHome color="darkgoldenrod"/> {t('details_building.title')} </h3>
-                                <h3 >{t('details_building.real_estate_gate')}<span className="text-warning">{t('details_building.real_estate_gate1')}</span></h3>
+                                <h4 className="text-wring pb-2"><FaHome color="darkgoldenrod"/> {t('details_building.title')} </h4>
+                                <h4 >{t('details_building.real_estate_gate')}<span className="text-warning"> {product.price}</span></h4>
                             </div>
                             <div className="Burgrif-Details p-3">
                                 <p>{t('details_building.description1')}</p>
@@ -94,7 +139,7 @@ const DetailsBuilding =({darkMode}) =>{
                             <h4 className="pb-2"><CiLocationOn/>{t('details_building.address.description1')}</h4>
                             <div className="d-flex justify-content-between p-3">
                             <div className="Country">
-                                <h6 className="mb-5">{t('details_building.address.description2')} <span>{t('details_building.address.description3')}</span></h6>
+                                <h6 className="mb-5">{t('details_building.address.description2')} <span>{language == 'ar' ? product.location.ar : product.location.en}</span></h6>
                                 <h6>{t('details_building.address.description4')} <span>{t('details_building.address.description5')}</span></h6>
                             </div>
                             <div className="Gps">
@@ -126,7 +171,7 @@ const DetailsBuilding =({darkMode}) =>{
 
                         <div className="service-building ps-3 px-3">
                             <h4 className="p-2 mb-4"><FaQuestion/> {t('details_building.service_building.title')}</h4>
-                            <p className=" mb-4"><FaBed/> {t('details_building.service_building.description1')}<span>1 </span></p>
+                            <p className=" mb-4"><FaBed/> {language == 'ar' ? product.studio.ar : product.studio.en}<span></span></p>
                             <p className=" mb-4"><FaBath/>  {t('details_building.service_building.description2')}<span> 1</span></p>
                             <p className=" mb-4"><GiHomeGarage/>  {t('details_building.service_building.description3')}<span> 1</span></p>
                             <p className=" mb-4"><FaRulerCombined/>  {t('details_building.service_building.description4')}<span> 950</span></p>
@@ -135,20 +180,29 @@ const DetailsBuilding =({darkMode}) =>{
                         </div>
 
                         <div className="Register-User p-2 px-3">
-                        <h4 className="p-2 mb-4"><FaQuestion/>   {t('details_building.register_user.title')}</h4>
-                        <label htmlFor="Name"className="form-label d-block">{t('details_building.register_user.description1')}</label>
-                        <input type="text" placeholder={t('details_building.register_user.description5')}/>
-                        <label htmlFor="E-mail"className="form-label d-block mt-3">{t('details_building.register_user.description2')}</label>
-                        <input type="text" placeholder={t('details_building.register_user.description6')}/>
-                        <label htmlFor="Phone"className="form-label d-block mt-3">{t('details_building.register_user.description3')}</label>
-                        <input type="text" placeholder={t('details_building.register_user.description7')}/>
-                        <button className="btn btn-warning mt-3 text-center" style={{width:'100%'}}> <RiMailSendFill/>{t('details_building.register_user.description4')}</button>
+                            <h4 className="p-2 mb-4"><FaQuestion/>   {t('details_building.register_user.title')}</h4>
+                            <form onSubmit={handleSubmit}>
+                                    <h3 className="text-warning mb-3">{t('footer.get-in-touch')}</h3>
+                                    <input type="text" name="product_Name" value={formData.product_Name} onChange={handleChange} className="mb-3" readOnly/>
+                                    <input type="text" name="name" placeholder={t('footer.placeholder1')} value={formData.name} onChange={handleChange} className="mb-3" />
+                                    <input type="text " name="phone" placeholder={t('footer.placeholder2')} value={formData.phone} onChange={handleChange} className="mb-3"/>
+                                    <input type="email" name="email" placeholder={t('footer.placeholder3')} value={formData.email} onChange={handleChange} className="mb-3"/>
+                                    <button className="btn btn-warning mt-3 text-center" style={{width:'100%'}} type="submit"> <RiMailSendFill/>{t('details_building.register_user.description4')}</button>
+                                </form>
+                                
                         </div>
                     </div>
                 </div>
             </div>
             {showSpecialSection && (<Footer/>)}
+            
+            {showWhatsAppIcon && (
+                <div className="whatsApp-icon" onClick={()=> WhatsAppIcon(product.image)}>
+                    <FaWhatsapp size={60} color="green"/>
+                </div>
+            )}
         </div>
+        
     )
 }
 export default DetailsBuilding

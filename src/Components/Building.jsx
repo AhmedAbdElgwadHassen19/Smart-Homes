@@ -19,6 +19,7 @@ import AllProducts from "./AllProducts"
     const location =  useLocation ()
 
     const fetchProduct = ()=>{
+
         setProduct(AllProducts)
     }
     useEffect(()=>{
@@ -49,6 +50,7 @@ import AllProducts from "./AllProducts"
     if(loading){
         return <h2 className ="text-center text-warning mt-5"> Loading Products....</h2>
     }
+    
 
     return(
         <div className={darkMode ? "dark-mode" : "light-mode"}>
@@ -68,6 +70,8 @@ import AllProducts from "./AllProducts"
                     </div>
                 </>
             )}
+
+
 
 {showSpecialSection && (
                     <div className="inputs m-3">
@@ -115,9 +119,7 @@ import AllProducts from "./AllProducts"
                     </div>
                 </div>
                 )}
-            
             <div className="container">
-            
             <div className="row" key={language}>
                     {product.map((item)=>(
                         <div className="col-md-4 mb-4 " key={item.id}>
@@ -127,9 +129,11 @@ import AllProducts from "./AllProducts"
                                 <h5 className="card-title ps-3 px-3 mt-3">{language === 'ar' ? item.name.ar : item.name.en}</h5>
                                 <p className="card-text ps-3 px-3 ">{t('building.description2')} <span className="text-warning">{item.price}</span></p>
                                 <p className="card-text ps-3 px-3"><MdLocationCity/> {language == 'ar' ? item.location.ar : item.location.en} </p>
+                                <p className="card-text ps-3 px-3">{language == 'ar' ? item.studio.ar : item.studio.en}</p>
                                 <p className="card-text ps-3 px-3"><CiLocationOn/> {language == 'ar' ? item.location.ar : item.location.en} </p>
+                                <p className="card-text ps-3 px-3"> {language == 'ar' ? item.payment_plan.ar : item.payment_plan.en} </p>
+                                <p className="card-text ps-3 px-3"> {language == 'ar' ? item.down_payment.ar : item.down_payment.en} </p>
                                 <Link to={`/detailsbuilding/${item.id}`} className="btn btn-warning ps-3 px-3">{t('building.description_btn')}</Link>
-                                
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
-import imag from "../image/4dacd4c0-540d-403d-b953-187a08a624de.jpeg"
+import imag1 from "../image/IMG-20241104-WA0010.jpg"
+import imag2 from "../image/IMG-20241105-WA0022.jpg"
+import imag3 from "../image/IMG-20241106-WA0020.jpg"
 import {  useEffect  } from "react"
 import { useTranslation } from "react-i18next"
 import AOS from "aos"
@@ -27,22 +29,22 @@ function BrowseCity({darkMode}){
 
             <div className= "Cites container">
                 <div className="row">
-                        <Link to={'/building'} className="city col-lg-4 mb-5">
-                            <img src={imag} alt=""/>
+                        <Link to={'/dubai'} className="city col-lg-4 mb-5">
+                            <img src={imag1} alt="" className="img-fluid"/>
                             <div className="overlay-city-one"><h1>{t('cites.description1')}</h1></div>
                             <h4> {t('cites.description2')}</h4>
                         </Link>
                         
-                        <Link to={'/building'} className="city col-lg-4 mb-5">
-                        <img src={imag} alt=""/>
-                            <div className="overlay-city-one"><h1>{t('cites.description1')}</h1></div>
-                            <h4> {t('cites.description2')}</h4>
+                        <Link to={'/abudubai'} className="city col-lg-4 mb-5">
+                        <img src={imag2} alt=""/>
+                            <div className="overlay-city-one"><h1>{t('cites.description3')}</h1></div>
+                            <h4> {t('cites.description4')}</h4>
                         </Link>
 
-                        <Link to={'/building'} className="city col-lg-4 mb-5">
-                        <img src={imag} alt=""/>
-                            <div className="overlay-city-one"><h1>{t('cites.description1')}</h1></div>
-                            <h4> {t('cites.description2')}</h4>
+                        <Link to={'/sharjah'} className="city col-lg-4 mb-5">
+                        <img src={imag3} alt=""/>
+                            <div className="overlay-city-one"><h1>{t('cites.description5')}</h1></div>
+                            <h4> {t('cites.description6')}</h4>
                         </Link>
                     </div>
                 </div>

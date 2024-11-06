@@ -37,7 +37,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.5);
     z-index: 1;
 }
 .title-overlay{
@@ -102,12 +102,15 @@ body{
 .city{
     position: relative;
     overflow: hidden;
+    box-shadow: 8px 8px 12px 5px #4b4848;
     height: 80vh;
     border-radius:10%;
 }
 .city img{
+    width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block ;
     transition: transform 0.3s ease-in-out;
 }
 .city .overlay-city-one{
@@ -142,7 +145,7 @@ body{
 /* End BrowseCity */
 /* Start  Building*/
 .card img{
-    height: 40vh;
+    height: 30vh;
     transition: transform 1s ease;
 }
 .card{
@@ -150,7 +153,6 @@ body{
     overflow: hidden;
 }
 .card-body{
-    font-family: "Merienda";
     font-weight: bold;
 }
 .card:hover .card-img{
@@ -193,37 +195,6 @@ input[type ="message"]{
 }
 
 /* End Building */
-/* Start Blogs */
-.Blogs{
-    position: relative;
-    overflow: hidden;
-    p{
-        font-size: 1rem;
-        font-weight: bold;
-    }
-}
-.Blogs img{
-    transition: transform 1s ease;
-}
-.Blogs :hover img{
-    transform: scale(1.1);
-    transition: 1s;
-}
-.AllBuilding{
-    border: 2px solid rgb(207, 200, 200);
-    height: max-content;
-    h3{
-        background-color: darkgoldenrod;
-        color: #eee;
-        height: 50px;
-        text-align: center;
-    }
-    .img-title :hover img,h3 {
-        transform: scale(1.1);
-        transition: 1s;
-    }
-}
-/* End Blogs */
 /* Start Footer */
 .info-footer{
     max-width: 60%;
@@ -350,33 +321,7 @@ input[type ="message"]{
     }
 }
 /* End ContactUS */
-/* Start Blogs Details */
-.AllBuilding{
-    font-family: 'Merienda';
-    font-weight: bold;
-    h3{padding-top: 6px;}
-}
-.title-blogs-detal{
-    box-shadow: 5px 5px 10px 5px #8a8383;
-    h3{
-        font-family: 'Merienda';
-        font-weight: bold;
-    }
-}
-.img-blogs-detal{
-    overflow: hidden;
-    box-shadow: 5px 5px 10px 5px #8a8383;
-    img{
-        transition: transform 1s ease;
-        
-    }
-}
-.img-blogs-detal  img:hover{
-    transform: scale(1.1);
-    transition: 1s;
-}
-/* End Blogs Details */
-/* Start DarkMode amd Light */
+/* Start DarkMode and Light */
 .light-mode  {
     background-color: white;
     color: black;
@@ -396,3 +341,15 @@ body[dir = "ltr"]{
     direction: ltr;
 }
 /* End Language */
+/* Start whatsApp-icon */
+.whatsApp-icon{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+.whatsApp-icon:hover{
+    transform: scale(1.1);
+}

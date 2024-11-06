@@ -36,7 +36,7 @@ function Contact({darkMode}){
             </div>
             
 
-                    <div className="BookNow text-center container mt-5">
+                    {/* <div className="BookNow text-center container mt-5">
                         <div className="name-phone m-3 ">
                             <input type="text" placeholder={t('contacts.description1')} />
                             <input type="text" placeholder={t('contacts.description2')} />
@@ -49,7 +49,7 @@ function Contact({darkMode}){
                             <input type="message" placeholder={t('contacts.description5')} />
                         </div>
                             <button className="btn btn-warning mt-5" style={{width:'100%' , padding:'10px' , color:'#f9f9f9', fontSize:'30px'}}>{t('contacts.description6')}</button>
-                    </div>
+                    </div> */}
             <Footer/>
         </div>
     )
