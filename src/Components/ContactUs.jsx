@@ -29,7 +29,7 @@ function Contact({darkMode}){
                         </div>
                         <div className="Email-contact text-center col-lg-4 ">
                             <MdEmail className="Icon-contact"/>
-                            <h3 className="text-contact"><a href="#mailto:info@newgoldenfuture.com">info@newgoldenfuture.com</a></h3>
+                            <h3 className="text-contact"><a href="mailto:info@newgoldenfuture.com">info@newgoldenfuture.com</a></h3>
                         </div>
                 </div>
             </div>

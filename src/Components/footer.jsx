@@ -48,7 +48,7 @@ function Footer({darkMode}){
                                     <li><a href="https://wa.me/971561574757"><FaWhatsapp/></a></li>
                                     <li><a href="https://www.instagram.com/new.goldenfuture?igsh=MWdzdGVzbGl1bHZvcw=="><FaInstagram /></a></li>
                                     <li><a href="tel:+971561574757"><FaPhoneAlt /></a></li>
-                                    <li><a href="#mailto:info@newgoldenfuture.com"><MdEmail /></a></li>
+                                    <li><a href="mailto:info@newgoldenfuture.com"><MdEmail /></a></li>
                                 </ul>
                             </div>
                             <div className="Links-footer"  style={{fontFamily:"Merienda" , fontWeight:"bold",}}>
