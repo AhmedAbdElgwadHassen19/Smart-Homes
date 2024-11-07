@@ -104,8 +104,8 @@ const AllProducts = [
     { 
         id: 5 ,
         name:{
-            en:"Damac Safa 3",
-            ar:"داماك الصفا 3 ",
+            en:"Safa one",
+            ar:" الصفا الاول ",
         },
         price: "Call us",
         location:{
@@ -154,7 +154,7 @@ const AllProducts = [
     { 
         id: 7 ,
         name:{
-            en:" The Acres (Villa",
+            en:" The Acres Villa",
             ar:"فيلا",
         },
         price: " 5M",
@@ -179,7 +179,7 @@ const AllProducts = [
     { 
         id: 8 ,
         name:{
-            en:"Bughatti Residenes (Penthouse)",
+            en:"Bughatti Residenes ",
             ar:"بنتاوس",
         },
         price: "20M ",
@@ -204,7 +204,7 @@ const AllProducts = [
     { 
         id: 9 ,
         name:{
-            en:"Mercedes Benz (Building)",
+            en:"Mercedes Benz ",
             ar:"شقة",
         },
         price: "10M",
@@ -229,7 +229,7 @@ const AllProducts = [
     { 
         id: 10 ,
         name:{
-            en:"Bayz 101 (Building)",
+            en:"Bayz 101 ",
             ar:"شقة",
         },
         price: "1,2M ",
@@ -329,8 +329,8 @@ const AllProducts = [
     { 
         id: 14 ,
         name:{
-            en:"Burj Azii",
-            ar:"برج عزيزي",
+            en:"Burj Azizi",
+            ar:"برج عزيز",
         },
         price: "Call us",
         location:{

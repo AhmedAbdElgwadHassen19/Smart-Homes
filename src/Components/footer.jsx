@@ -1,8 +1,8 @@
 import { HiArrowCircleRight } from "react-icons/hi"
-import { FaFacebook,FaInstagram , FaLinkedin , FaPhoneAlt } from "react-icons/fa"
-import { FaLocationDot , FaWhatsapp} from "react-icons/fa6"
+import { FaFacebook,FaInstagram  , FaPhoneAlt } from "react-icons/fa"
+import {  FaWhatsapp} from "react-icons/fa6"
 import { MdEmail } from "react-icons/md"
-import imag from "../image/4dacd4c0-540d-403d-b953-187a08a624de.jpeg"
+import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import { useState } from "react"
 import emailjs from "@emailjs/browser"
@@ -45,47 +45,21 @@ function Footer({darkMode}){
                                 <p className="text-light">{t('footer.real_estate_gate')}</p>
                                 <ul className="footer-ul">
                                     <li><a href="https://www.facebook.com/newgoldenfuture.re"><FaFacebook  /></a></li>
-                                    <li><a href="https://wa.me/971561030458"><FaWhatsapp/></a></li>
+                                    <li><a href="https://wa.me/971561574757"><FaWhatsapp/></a></li>
                                     <li><a href="https://www.instagram.com/new.goldenfuture?igsh=MWdzdGVzbGl1bHZvcw=="><FaInstagram /></a></li>
-                                    <li><a href="https://www.linkedin.com/company/smart-homes-real-estate-fzc-llc"><FaLinkedin /></a></li>
-                                    <li><a href="#"><FaPhoneAlt /></a></li>
-                                    <li><a href="#"><FaLocationDot /></a></li>
-                                    <li><a href="#"><MdEmail /></a></li>
+                                    <li><a href="tel:+971561574757"><FaPhoneAlt /></a></li>
+                                    <li><a href="#mailto:info@newgoldenfuture.com"><MdEmail /></a></li>
                                 </ul>
                             </div>
-                            <div className="Links-footer text-light"  style={{fontFamily:"Merienda" , fontWeight:"bold"}}>
+                            <div className="Links-footer"  style={{fontFamily:"Merienda" , fontWeight:"bold",}}>
                                 <h3 className="text-warning">{t('footer.quick_links')}</h3>
-                                <li><HiArrowCircleRight  className="Icon"/> {t('footer.quick_links1')}</li>
-                                <li><HiArrowCircleRight className="Icon"/> {t('footer.quick_links2')}</li>
-                                <li><HiArrowCircleRight className="Icon"/> {t('footer.quick_links3')}</li>
-                                <li><HiArrowCircleRight className="Icon"/> {t('footer.quick_links4')}</li>
+                                <Link to={'/'}><li><HiArrowCircleRight  className="Icon"/> {t('footer.quick_links1')}</li></Link>
+                                <Link to={'/about'}><li><HiArrowCircleRight className="Icon"/> {t('footer.quick_links2')}</li></Link>
+                                <Link to={'/contact'}><li><HiArrowCircleRight className="Icon"/> {t('footer.quick_links4')}</li></Link>
                             </div>
                         </div>
 
-                        <div className="footer-input col-md-12 col-lg-6 d-flex justify-content-between pb-5">
-                            <div className="img-info  mt-5 "  style={{fontFamily:"Merienda" , fontWeight:"bold"}}>
-                                <div className="img-title d-flex" >
-                                    <div className="img-footer">
-                                        <img src={imag} alt="" /> 
-                                    </div>
-                                    <h5 className="text-warning mx-3">{t('footer.damac_lagoons')}</h5>
-                                </div>
-                                
-                                <div className="img-title d-flex mt-3 mb-3">
-                                    <div className="img-footer">
-                                        <img src={imag} alt="" /> 
-                                    </div>
-                                    <h5 className="text-warning mx-3">{t('footer.damac_lagoons')}</h5>
-                                </div>
-
-                                <div className="img-title d-flex">
-                                    <div className="img-footer">
-                                        <img src={imag} alt="" /> 
-                                    </div>
-                                    <h5 className="text-warning mx-3">{t('footer.damac_lagoons')}</h5>
-                                </div>
-                            </div>
-
+                        <div className="footer-input col-md-12 col-lg-6 d-flex justify-content-end pb-5">
                             <div className="from-input mt-5 ">
                                 <form onSubmit={handleSubmit}>
                                     <h3 className="text-warning mb-3">{t('footer.get-in-touch')}</h3>
@@ -95,7 +69,6 @@ function Footer({darkMode}){
                                     <button type="submit" className="bt-input btn btn-warning">{t('footer.placeholder_btn')}</button>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>

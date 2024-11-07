@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import imag1 from "../image/IMG-20241104-WA0010.jpg"
-import imag2 from "../image/IMG-20241105-WA0022.jpg"
-import imag3 from "../image/IMG-20241106-WA0020.jpg"
+import imag1 from "../image/IMG-20241107-WA0047.jpg"
+import imag2 from "../image/IMG-20241107-WA0046.jpg"
+import imag3 from "../image/IMG-20241107-WA0045.jpg"
 import {  useEffect  } from "react"
 import { useTranslation } from "react-i18next"
 import AOS from "aos"
@@ -34,7 +34,6 @@ function BrowseCity({darkMode}){
                             <div className="overlay-city-one"><h1>{t('cites.description1')}</h1></div>
                             <h4> {t('cites.description2')}</h4>
                         </Link>
-                        
                         <Link to={'/abudubai'} className="city col-lg-4 mb-5">
                         <img src={imag2} alt=""/>
                             <div className="overlay-city-one"><h1>{t('cites.description3')}</h1></div>

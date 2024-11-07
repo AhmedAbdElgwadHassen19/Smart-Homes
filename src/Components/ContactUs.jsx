@@ -1,4 +1,4 @@
-import imag from "../image/4dacd4c0-540d-403d-b953-187a08a624de.jpeg"
+import imag from "../image/IMG-20241107-WA0022.jpg"
 import { FaPhoneAlt  } from "react-icons/fa"
 import { FaLocationDot } from "react-icons/fa6"
 import { MdEmail } from "react-icons/md"
@@ -14,23 +14,22 @@ function Contact({darkMode}){
                         <img src={imag} alt="" className="img-fluid"/>
                         <div className="overlay-contact">
                         <div className="main-title text-center pt-5 pb-5 position-relative mb-4 mt-5">
-                            <h1 className="text-warning mb-1">{t('contacts.title')}</h1>
-                            <h3 className="text-light mt-3">{t('contacts.real_estate_gate')}</h3>
+                            <h1 className="text-warning mb-1">{t('contacts')}</h1>
                         </div>
                         </div>
                     </div>
                 <div className="row mt-5">
                         <div className="phone-contact text-center col-lg-4 ">
                             <FaPhoneAlt className="Icon-contact"/>
-                            <h3 className="text-contact">+915248736</h3>
+                            <h3 className="text-contact"><a href="tel:+971561574757">+971561574757</a></h3>
                         </div>
                         <div className="Location-contact text-center col-lg-4 ">
                             <FaLocationDot className="Icon-contact"/>
-                            <h3 className="text-contact">Dubai The UAE</h3>
+                            <h3 className="text-contact"><a href="#">Dubai , Sheikh Zayed Road </a></h3>
                         </div>
                         <div className="Email-contact text-center col-lg-4 ">
                             <MdEmail className="Icon-contact"/>
-                            <h3 className="text-contact">info@Mohammed.com</h3>
+                            <h3 className="text-contact"><a href="#mailto:info@newgoldenfuture.com">info@newgoldenfuture.com</a></h3>
                         </div>
                 </div>
             </div>

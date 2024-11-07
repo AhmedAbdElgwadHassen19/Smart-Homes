@@ -1,6 +1,5 @@
-import imag1 from "../image/IMG-20241105-WA0023.jpg"
-import imag2 from "../image/4dacd4c0-540d-403d-b953-187a08a624de.jpeg"
-
+import imag1 from "../image/IMG-20241107-WA0053.jpg"
+import imag2 from "../image/IMG-20241107-WA0050.jpg"
 import { useState , useEffect  } from "react"
 import Footer from "./footer"
 import { useLocation } from "react-router-dom"
@@ -55,7 +54,7 @@ function About ({darkMode}){
 
                             <div className="col-lg-6 mb-5">
                                 <div className="image-About position-relative">
-                                    <img className="img-fluid" src={imag2} alt="" />
+                                    <img className="img-fluid" src={imag1} alt="" />
                                 </div>
                             </div>
                         </div>
@@ -63,16 +62,16 @@ function About ({darkMode}){
                         <div data-aos = "fade-left" className="row">
                         <div className="col-lg-6 mb-5">
                                 <div className="image-About2 position-relative">
-                                    <img className="img-fluid" src={imag1} alt="" />
+                                    <img className="img-fluid" src={imag2} alt="" />
                                 </div>
                             </div>
 
                             <div className= {`title-about col-lg-6 text-md-start mb-5`}>
                                 <div className="text-about px-5">
-                                    <h2 style={{fontFamily:"Merienda" , fontWeight:"bold"}}>{t('abouts.real_estate_gate')}</h2>
-                                    <h5 className="mb-4 mt-4">{t('abouts.description1')}</h5>
-                                    <h5 className="mb-4">{t('abouts.description2')}</h5>
-                                    <h5 className="mb-4">{t('abouts.description3')}</h5>
+                                    <h2 style={{fontFamily:"Merienda" , fontWeight:"bold"}}>{t('abouts.description4')}</h2>
+                                    <h5 className="mb-4 mt-4">{t('abouts.description5')}</h5>
+                                    <h5 className="mb-4">{t('abouts.description6')}</h5>
+                                    <h5 className="mb-4">{t('abouts.description7')}</h5>
                                 </div>
                             </div>
                             

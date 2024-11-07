@@ -26,11 +26,12 @@ function Navbar({darkMode , toogleDarkMode , toggleLanguage}){
                         </li>
                         <li className="nav-item dropdown">
                         <Link to={'/browsecity'} className="nav-link dropdown-toggle p-lg-3"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {t('properties')}
+                            {t('properties.title_properties')}
                         </Link>
                         <ul className="dropdown-menu">
-                            <li><a className="dropdown-item" >{t('dubai')}</a></li>
-                            <li><a className="dropdown-item" >{t('another_action')}</a></li>
+                            <Link to={'/dubai'}><li><a className="dropdown-item" >{t('properties.dubai')}</a></li></Link>
+                            <Link to={'/abudubai'}><li><a className="dropdown-item" >{t('properties.sharjah')}</a></li></Link>
+                            <Link to={'/sharjah'}><li><a className="dropdown-item" >{t('properties.abu_dhabi')}</a></li></Link>
                         </ul>
                         </li>
                         <li className="nav-item">

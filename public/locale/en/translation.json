@@ -2,24 +2,31 @@
     "home": "Home" ,
     "about" : "About Us",
     "blogs" : "Blogs",
-    "properties" : "Our properties",
-    "dubai" : "Dubai",
-    "another_action" : "Another action",
+    "properties" : {
+        "title_properties":"Our properties",
+        "dubai":"Dubai",
+        "sharjah":"Sharjah",
+        "abu_dhabi":"Abu Dhabi"
+    },
     "contact" : "Contact Us",
     "switch_language" : "Arabic",
     "switch_dark_mode" : " Dark Mode",
     "switch_light_mode" : " Light Mode ",
     "slider":{
-        "title":"Smart Homes",
-        "real_estate_gate":"Smart HomesYour perfect home in the UAE & Egypt Select from the nicest apartments,",
-        "description1":"villas, and townhouse"
+        "title":"New Golden Future",
+        "real_estate_gate":"New Golden Future your perfect apartment,",
+        "description1":"villas, and townhouse the UAE"
     },
     "abouts" :{
         "title":"About Us",
-        "real_estate_gate" :"Smart Homes your real estate gate",
-        "description1":"We are care to meet the needs of citizens and residents and facilitate the search for real estate in the Emirates",
-        "description2":"so we studied the market and focused on finding solutions that meet real estate seekers and real estate agents.",
-        "description3":"Now you enjoy choosing between many different housing units and enjoy complete luxury near all services in the Emirates with all legal services and financial institutions that help you"
+        "real_estate_gate" :"New Golden Future Real Estate",
+        "description1":"We are keen to meet the needs of investors and facilitate the search for real estate in the Emirates",
+        "description2":"Therefore, we studied the market and focused on finding solutions that meet the desires of real estate seekers and real estate agents",
+        "description3":"Now you can enjoy choosing between many different residential units and enjoy complete luxury near all services in the Emirates",
+        "description4":"We provide you with the best real estate services in the UAE.",
+        "description5":"We strive to address and meet the demands of both residents and investors in the most efficient and effective manner possible.",
+        "description6":"We assist you in selecting the most appropriate and finest option for your housing and investment needs, with great dependability and accuracy",
+        "description7":" Invest now in Dubai and other Emirates' most beautiful and crucial residential districts with the highest investment return."
     },
     "cites" :{
         "title" :"Browse Cities",
@@ -44,12 +51,11 @@
     },
     
     "footer": {
-        "title":"Smart Homes",
+        "title":"New Golden Future",
         "real_estate_gate":"We always seek to give our customers with great service as well as complete transparency and support. Enjoy luxury and security in the most attractive places in the  UAE that are ideal for residential and investment purposes.",
         "quick_links":"quick_links",
         "quick_links1":"Home",
         "quick_links2":"About Us",
-        "quick_links3":" Real Estate",
         "quick_links4":"Contact Us",
         "damac_lagoons":"Damac lagoons",
         "get-in-touch" : "Get In Touch",
@@ -117,16 +123,7 @@
             "description7":"Enter a phone"
         }
     },
-    "contacts":{
-        "title":"Out Blogs",
-        "real_estate_gate":"Get In Touch",
-        "description1":"Enter Name",
-        "description2":"Enter E-mail",
-        "description3":"Enter a Phone",
-        "description4":"Enter Subject",
-        "description5":" Message",
-        "description6":"Send"
-    },
+    "contacts":"Contact Us",
     "buildings":{
         "title1":"Check out real estates",
         "real_estate_gate":"Everything you want you will find here.",
