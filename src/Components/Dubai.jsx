@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import AllProducts from "./AllProducts";
 import { CiLocationOn } from "react-icons/ci"
-import { MdLocationCity } from "react-icons/md"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import AOS from "aos"
 import Footer from "./footer";
 
-    const selectedIds = [1,3,4,5,6,7,8,9,10,11,12,13,14]
+    const selectedIds = [1,2,3,4,5,6,7,8,9,10,11]
     const SelectedProducts = AllProducts.filter(product=> selectedIds.includes(product.id) )
 
 // eslint-disable-next-line react/prop-types
@@ -35,7 +34,7 @@ const Dubai = ({darkMode , language}) => {
                             <div className="card-body">
                                 <h5 className="card-title ps-3 px-3 mt-3">{language === 'ar' ? item.name.ar : item.name.en}</h5>
                                 <p className="card-text ps-3 px-3 ">{t('building.description2')} <span className="text-warning">{item.price}</span></p>
-                                <p className="card-text ps-3 px-3"><MdLocationCity/> {language == 'ar' ? item.location.ar : item.location.en} </p>
+                                
                                 <p className="card-text ps-3 px-3">{language == 'ar' ? item.studio.ar : item.studio.en}</p>
                                 <p className="card-text ps-3 px-3"><CiLocationOn/> {language == 'ar' ? item.location.ar : item.location.en} </p>
                                 <p className="card-text ps-3 px-3"> {language == 'ar' ? item.payment_plan.ar : item.payment_plan.en} </p>

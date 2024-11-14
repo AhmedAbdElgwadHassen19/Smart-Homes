@@ -35,13 +35,13 @@ function BrowseCity({darkMode}){
                             <h4> {t('cites.description2')}</h4>
                         </Link>
                         <Link to={'/abudubai'} className="city col-lg-4 mb-5">
-                        <img src={imag2} alt=""/>
+                        <img src={imag3} alt=""/>
                             <div className="overlay-city-one"><h1>{t('cites.description3')}</h1></div>
                             <h4> {t('cites.description4')}</h4>
                         </Link>
 
                         <Link to={'/sharjah'} className="city col-lg-4 mb-5">
-                        <img src={imag3} alt=""/>
+                        <img src={imag2} alt=""/>
                             <div className="overlay-city-one"><h1>{t('cites.description5')}</h1></div>
                             <h4> {t('cites.description6')}</h4>
                         </Link>

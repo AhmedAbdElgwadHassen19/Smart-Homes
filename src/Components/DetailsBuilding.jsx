@@ -1,10 +1,8 @@
 // import imag from "../image/4dacd4c0-540d-403d-b953-187a08a624de.jpeg"
-import { FaHome ,FaQuestion , FaBed , FaBath , FaRulerCombined , FaWhatsapp} from "react-icons/fa"
+import { FaHome ,FaQuestion , FaBed , FaWhatsapp , FaRulerCombined} from "react-icons/fa"
 import { CiLocationOn } from "react-icons/ci"
 import { CgArrowTopLeftR , CgCheckO } from "react-icons/cg"
 import { AiFillFileText } from "react-icons/ai"
-import { GiHomeGarage } from "react-icons/gi"
-import { HiCheck } from "react-icons/hi"
 import { RiMailSendFill } from "react-icons/ri"
 import { useState , useEffect } from "react"
 import { useLocation, useParams } from "react-router-dom"
@@ -12,8 +10,10 @@ import Footer from "./footer"
 import { useTranslation } from "react-i18next"
 import AllProducts from "./AllProducts"
 import emailjs from "@emailjs/browser"
+
+
 // eslint-disable-next-line react/prop-types
-const DetailsBuilding =({darkMode , language}) =>{
+const DetailsBuilding =({darkMode , language}) => {
     const {productId} = useParams()
     const [product , setProduct] = useState(null)
     const [loading , setLoading] = useState(true)
@@ -68,7 +68,7 @@ const DetailsBuilding =({darkMode , language}) =>{
 
     const WhatsAppIcon = ()=>{
         if(product){
-            const message = `Hello! Iam interested in the product : ${JSON.stringify(language == 'ar' ? product.name.ar : product.name.en)}`
+            const message = `Hello! Iam interested in the product : (${JSON.stringify(language == 'ar' ? product.name.ar : product.name.en)})`
             console.log(message);
             const URLWhats = `https://wa.me/971561030458?text=${encodeURIComponent(message)}`
             window.open( URLWhats, '_blank')
@@ -96,13 +96,16 @@ const DetailsBuilding =({darkMode , language}) =>{
                     <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                         <div className="Details carousel-inner" >
                                 <div className="carousel-item active">
-                                <img src={product.image} className="d-block w-100" alt={`product Image`}  />
+                                <img src={product.image1} className="d-block w-100" alt={`product Image`}  />
                                 </div>
                                 <div className="carousel-item">
-                                <img src={product.image}className="d-block w-100" alt={`product Image`}   />
+                                <img src={product.image2}className="d-block w-100" alt={`product Image`}   />
                                 </div>
                                 <div className="carousel-item">
-                                <img src={product.image} className="d-block w-100" alt={`product Image`}   />
+                                <img src={product.image3} className="d-block w-100" alt={`product Image`}   />
+                                </div>
+                                <div className="carousel-item">
+                                <img src={product.image4} className="d-block w-100" alt={`product Image`}   />
                                 </div>
                         </div>
                         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -117,21 +120,15 @@ const DetailsBuilding =({darkMode , language}) =>{
 
                         <div className="info-details mt-5 mb-5">
                             <div className="tile-price-details d-flex justify-content-between p-3">
-                                <h4 className="text-wring pb-2"><FaHome color="darkgoldenrod"/> {t('details_building.title')} </h4>
+                                <h4 className="text-wring pb-2"><FaHome color="darkgoldenrod"/> {product.title} </h4>
                                 <h4 >{t('details_building.real_estate_gate')}<span className="text-warning"> {product.price}</span></h4>
                             </div>
                             <div className="Burgrif-Details p-3">
-                                <p>{t('details_building.description1')}</p>
-                                <h4>{t('details_building.description2')}</h4>
-                                <p>{t('details_building.description3')}</p>
-                                <p>{t('details_building.description4')}</p>
-                                <p>{t('details_building.description5')}</p>
-
-                                <h4>{t('details_building.description6')}</h4>
-                                <p>{t('details_building.description7')}</p>
-
-                                <h4>{t('details_building.description8')}</h4>
-                                <p>{t('details_building.description9')}</p>
+                                <h5>{language == "ar" ? product?.details1?.ar?.part1 : product?.details1?.en?.part1}</h5>
+                                <br />
+                                <h5>{language == "ar" ? product?.details1?.ar?.part2 : product?.details1?.en?.part2}</h5>
+                                <br />
+                                <h5>{language == "ar" ? product?.details1?.ar?.part3 : product?.details1?.en?.part3}</h5>
                             </div>
                         </div>
 
@@ -139,12 +136,11 @@ const DetailsBuilding =({darkMode , language}) =>{
                             <h4 className="pb-2"><CiLocationOn/>{t('details_building.address.description1')}</h4>
                             <div className="d-flex justify-content-between p-3">
                             <div className="Country">
-                                <h6 className="mb-5">{t('details_building.address.description2')} <span>{language == 'ar' ? product.location.ar : product.location.en}</span></h6>
-                                <h6>{t('details_building.address.description4')} <span>{t('details_building.address.description5')}</span></h6>
+                            <h6 className="mb-5">{t('details_building.address.description6')} : <span>{language == 'ar' ? product?.city?.ar : product?.city?.en}</span></h6>
+                                <h6>{t('details_building.address.description4')} <span>{language == 'ar' ? product?.adders?.ar : product?.adders?.en}</span></h6>
                             </div>
                             <div className="Gps">
-                                <h6 className="mb-5">{t('details_building.address.description6')} <span>{t('details_building.address.description7')}</span></h6>
-                                <h6 ><a className="text-warning" href="https://www.google.com/maps/search/%D8%B4%D9%82%D9%82+%D8%A8%D9%86+%D8%BA%D8%A7%D8%B7%D9%89+%D8%AF%D8%A8%D9%89%E2%80%AD/@25.1371542,55.1557422,10.51z?hl=en&entry=ttu"><CgArrowTopLeftR/>{t('details_building.address.description8')}</a> </h6>
+                                <h6 > <a className="text-warning" href={product.gotolocation} target="_blank" rel="noopener noreferrer"><CgArrowTopLeftR/>{t('details_building.address.description8')} </a></h6>
                             </div>
                             </div>
                         </div>
@@ -164,19 +160,15 @@ const DetailsBuilding =({darkMode , language}) =>{
                     <div className={`col-md-4 mt-3    ${darkMode ? 'dark-mode' : ""}`}>
                         <div className="Data-details ps-3 px-3">
                             <h4 className="p-2 mb-4"> <AiFillFileText/>{t('details_building.data_details.title')}</h4>
-                            <p className=" mb-4">{t('details_building.data_details.description1')}<span> {t('details_building.data_details.description2')}</span></p>
-                            <p className=" mb-4">{t('details_building.data_details.description3')}<span> {t('details_building.data_details.description4')}</span></p>
-                            <p className=" pb-4">{t('details_building.data_details.description5')}<span>{t('details_building.data_details.description6')}</span></p>
+                            <p className=" mb-4">{t('details_building.data_details.description3')}<span> {language == "ar" ? product?.type?.ar : product?.type?.en}</span></p>
+                            <p className=" pb-4">{t('details_building.data_details.description5')}<span> {language == "ar" ? product?.status?.ar : product?.status?.en}</span></p>
                         </div>
 
                         <div className="service-building ps-3 px-3">
                             <h4 className="p-2 mb-4"><FaQuestion/> {t('details_building.service_building.title')}</h4>
-                            <p className=" mb-4"><FaBed/> {language == 'ar' ? product.studio.ar : product.studio.en}<span></span></p>
-                            <p className=" mb-4"><FaBath/>  {t('details_building.service_building.description2')}<span> 1</span></p>
-                            <p className=" mb-4"><GiHomeGarage/>  {t('details_building.service_building.description3')}<span> 1</span></p>
-                            <p className=" mb-4"><FaRulerCombined/>  {t('details_building.service_building.description4')}<span> 950</span></p>
-                            <p className=" mb-4 text-success"><HiCheck color="green"fontSize={'20px'}/>  {t('details_building.service_building.description5')} </p>
-                            <p className=" pb-4 text-success"><HiCheck color="green" fontSize={'20px'}/>  {t('details_building.service_building.description6')} </p>
+                            <p className=" pb-3"><FaBed/> {language == 'ar' ? product.studio.ar : product.studio.en}<span></span></p>
+                            <p className=" pb-5"><FaRulerCombined/> Size :  {language == 'ar' ? product?.size?.ar : product?.size?.en}<span></span></p>
+
                         </div>
 
                         <div className="Register-User p-2 px-3">

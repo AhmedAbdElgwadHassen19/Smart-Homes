@@ -68,22 +68,11 @@
         "title":"Apartment With private pool",
         "real_estate_gate":"Price Start From",
         "description1":"Details :",
-        "description2":"Dubai apartments with 8-year payment plan",
-        "description3": "Immerse yourself in an enchanting fusion of Italian elegance and Dubai refinement for a unique and extraordinary experience",
-        "description4":"This architectural gem rises majestically, offering beautifully designed apartments and studios, all with private pools on the balconies. An exceptional residence awaits you",
-        "description5":"From contemporary architecture to futuristic interiors, SAMANA Portofino embodies luxury at its finest. Its proximity to iconic sites and popular destinations offers a cosmopolitan lifestyle while preserving an oasis of tranquility within its gated community",
-        "description6":"Private pool on balcony overlooking Dubai",
-        "description7":"Relax in an exclusive experience with your own private pool offering panoramic views over Dubai. SAMANA Portofino apartments are meticulously designed with expansive terraces that offer unobstructed views, creating the ideal setting for living in the Middle most glamorous city.  miss this unique and exclusive opportunity to live at SAMANA Portofino",
-        "description8":"Playground, Mini Golf, Virtual Golf, Swimming pool, Cinema, Podcast Studio, Gym,...",
-        "description9":"Discover magnificent views and exceptional facilities.Discover much more than spectacular views of Dubai at our apartments. Enjoy a range of first-rate facilities, including an open-air cinema, swimming pool, gym, playground, barbecue area, all nestled in a verdant setting.",
+
         "address":{
             "description1":"Address",
-            "description2":"Country:",
-            "description3":"United Arab Emirates",
             "description4":"Address:",
-            "description5":"MBZ Dubai",
             "description6":"City",
-            "description7":"Dubai",
             "description8":"Open in Google Maps"
         },
         "features":{
@@ -97,20 +86,11 @@
         },
         "data_details":{
             "title":"Contract Data",
-            "description1":"Contract :",
-            "description2":"Sell ",
             "description3":"Type :",
-            "description4":"Apartment",
-            "description5":"Status  :",
-            "description6":"Under Construction"
+            "description5":"Status  :"
         },
         "service_building":{
-            "title":"Real estate Data",
-            "description1":"Rooms  :",
-            "description2":"Bathrooms  :",
-            "description3": "Garage  :",
-            "description4": "Sqft:",
-            "description5":"Garage"
+            "title":"Real estate Data"
         },
         "register_user":{
             "title":"Register your interest",

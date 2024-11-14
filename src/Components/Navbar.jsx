@@ -30,8 +30,8 @@ function Navbar({darkMode , toogleDarkMode , toggleLanguage}){
                         </Link>
                         <ul className="dropdown-menu">
                             <Link to={'/dubai'}><li><a className="dropdown-item" >{t('properties.dubai')}</a></li></Link>
-                            <Link to={'/abudubai'}><li><a className="dropdown-item" >{t('properties.sharjah')}</a></li></Link>
-                            <Link to={'/sharjah'}><li><a className="dropdown-item" >{t('properties.abu_dhabi')}</a></li></Link>
+                            <Link to={'/sharjah'}><li><a className="dropdown-item" >{t('properties.sharjah')}</a></li></Link>
+                            <Link to={'/abudubai'}><li><a className="dropdown-item" >{t('properties.abu_dhabi')}</a></li></Link>
                         </ul>
                         </li>
                         <li className="nav-item">

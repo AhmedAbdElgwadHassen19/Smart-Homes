@@ -76,7 +76,7 @@ import AllProducts from "./AllProducts"
                     {product.map((item)=>(
                         <div className="col-md-4 mb-4 " key={item.id}>
                         <div className="card">
-                            <img src={item.image} alt={item.name} className="card-img"/>
+                        <img src={item.image} alt={item.name} className="card-img"/>
                             <div className="card-body">
                                 <h5 className="card-title ps-3 px-1 mt-2">{language === 'ar' ? item.name.ar : item.name.en}</h5>
                                 <p className="card-text ps-3 px-1 ">{t('building.description2')} <span className="text-warning">{item.price}</span></p>
