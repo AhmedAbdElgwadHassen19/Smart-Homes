@@ -355,7 +355,7 @@ import img_product72 from "../image/product18/87ccc0d4-d92a-4b68-a60f-f1cae04853
         },
         studio:{
             en :"Hand over Q1 2027",
-            ar:"التلسم الرابع الاول من عام 2027"
+            ar:"التلسيم الرابع الاول من عام 2027"
         },
         title:"Villas",
         size:{
@@ -606,7 +606,7 @@ import img_product72 from "../image/product18/87ccc0d4-d92a-4b68-a60f-f1cae04853
         },
         studio:{
             en :"Hand over 2027",
-            ar:"النسليم 2027"
+            ar:"التسليم 2027"
         },
         details1:{
             en:{
@@ -685,8 +685,8 @@ import img_product72 from "../image/product18/87ccc0d4-d92a-4b68-a60f-f1cae04853
         title:"Burj Azizi",
         gotolocation:"https://g.co/kgs/cnJZow4",
         payment_plan:{
-            en:"Payment plan :ُEasy installment &&&&&& Hand over : announcing",
-            ar:"استليم : اعلن - قريبا & خطة الدفع :  قسط سهل "
+            en:"Payment plan : Easy installment  ||||||||||||| Hand over : announcing",
+            ar:"التسليم : اعلن - قريبا & خطة الدفع :  قسط سهل "
         },
         down_payment:{
             en:"Down Payment Call us",
@@ -919,7 +919,7 @@ import img_product72 from "../image/product18/87ccc0d4-d92a-4b68-a60f-f1cae04853
         size:{en:" 2,862 to 7,539 Sq Ft", ar:"Size: 2,862 to 7,539 قدم مربع"},
         payment_plan:{
             en:"Payment plan : 50/50 & Hand over: Q3- 2027",
-            ar:"خطة الدفع : 50/50 &  أستليم :  الربع الثالث - 2027"
+            ar:"خطة الدفع : 50/50 &  التسليم :  الربع الثالث - 2027"
         },
         down_payment:{
             en:"Down Payment 10%",
@@ -983,7 +983,7 @@ import img_product72 from "../image/product18/87ccc0d4-d92a-4b68-a60f-f1cae04853
         gotolocation:"https://g.co/kgs/vY1SUcU",
         payment_plan:{
             en:"Payment plan : 15/85 / Hand over: Q4- 2027",
-            ar:"خطة الدفع : 85/15 /  أستليم :  الربع الرابع - 2027"
+            ar:"خطة الدفع : 85/15 /  تسليم :  الربع الرابع - 2027"
         },
         down_payment:{
             en:"Down Payment 30%",
@@ -1038,7 +1038,7 @@ import img_product72 from "../image/product18/87ccc0d4-d92a-4b68-a60f-f1cae04853
         city:{en:"Sharjah",ar:"الشارقة"},
         payment_plan:{
             en:"Payment plan : 65/35 / Hand over: Q3- 2025",
-            ar:" خطة الدفع : 65/35 &  أستليم :  الربع الثالث- 2025" 
+            ar:" خطة الدفع : 65/35 &  التسليم :  الربع الثالث- 2025" 
         },
         down_payment:{
             en:"Down Payment 5%",
@@ -1082,7 +1082,7 @@ import img_product72 from "../image/product18/87ccc0d4-d92a-4b68-a60f-f1cae04853
             en:"Down Payment Call Us",
             ar:"الدفعة الاولي : اتصل بنا"
         },
-        studio:{en:"Hand over: Announcing",ar:" أستليم :أعلان قربيا"},
+        studio:{en:"Hand over: Announcing",ar:" تسليم :أعلان قربيا"},
         details1:{
             en:{
                 part1:"Blue Pearls at Sharjah Waterfront City is the latest residential façade by Ajmal Makan unveiling a captivating new lifestyle",
