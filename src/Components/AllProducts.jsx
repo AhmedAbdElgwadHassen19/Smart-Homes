@@ -863,7 +863,7 @@ import img_product72 from "../image/product18/87ccc0d4-d92a-4b68-a60f-f1cae04853
         },
         payment_plan:{
             en:"Payment plan : 20/80 / Hand over: Q4- 2028",
-            ar:"خطة الدفع : 80/20 /  أستليم :  الربع الرابع - 2028"
+            ar:"خطة الدفع : 80/20 /  تسليم :  الربع الرابع - 2028"
         },
         down_payment:{
             en:"Down Payment 20%",
